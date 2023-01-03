@@ -1,4 +1,3 @@
-
 #include "Keyboard.h"
 #include "Led.h"
 #include "ServoMotor.h"
@@ -16,7 +15,7 @@ LCD L(0x3F,16,2);
 
 char PIN[5] = "1234";
 float Money = 0;
-int k;
+int k, value;
 char Goal[5] = "100";
 bool Lchange = true;
 char MS[16], MG[5];
@@ -142,9 +141,10 @@ void loop() {
           L.printMsg(1, "D - final");
           T.turnOn();
           while(K.getKey() != 'D'){
-              if(analogRead(A1) <= 2){ //daca se introduce un banut
+              value = map(analogRead(A1), 1, 20, 1, 10);
+              if(value <= 5){ //daca se introduce un banut
                   Money += 0.50;
-                  G.pulse(1);
+                  G.pulse(2);
               }
           }
           T.turnOff();
@@ -154,9 +154,10 @@ void loop() {
           L.printMsg(1, "D - final");
           T.turnOn();
           while(K.getKey() != 'D'){
-              if(analogRead(A1) <= 2){ //daca se introduce un banut
+              value = map(analogRead(A1), 1, 20, 1, 10);
+              if(value <= 5){ //daca se introduce un banut
                   Money += 0.10;
-                  G.pulse(1);
+                  G.pulse(2);
               }
           }
           T.turnOff();
