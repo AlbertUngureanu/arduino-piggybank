@@ -1,4 +1,4 @@
-I developed a piggy bank using an Arduino UNO, and LCD, a servo motor, 3 leds and a keyboard.
+I developed a piggy bank using an Arduino UNO, an LCD, a servo motor, 3 leds and a keyboard.
 The code was written in C++, using object-oriented programming concepts, each component having both a header file and a .cpp in which I defined its class and the necessary methods.
 
 Using the keyboard, we can choose from the following functionalities:
